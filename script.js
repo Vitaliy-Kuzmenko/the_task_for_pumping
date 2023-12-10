@@ -21,4 +21,26 @@ btnResults.onclick = () => {
 
 
 // Угадай слово по вопросу
-//тест коммита
+const btnStartGame = document.getElementById('btn_show_question')
+const btnCheckAnswer = document.getElementById('btn_check_answer')
+const btnShowAnswer = document.getElementById('btn_show_answer')
+const inpAnswer = document.getElementById('answer')
+const divQuestion = document.getElementById('question')
+
+const arrQstions = ['Цифра 1', 'Цифра 2','Цифра 3']
+const arrAnswers = [1, 2, 3]
+
+const fnGame = (qs,an) =>{
+
+    divQuestion.innerHTML = arrQstions[0]
+
+    if (arrQstions[0] === arrAnswers[0]){
+        alert('good')
+    } else alert ('no')
+
+}
+
+btnStartGame.onclick = () =>{
+    fnGame()
+}
+
