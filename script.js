@@ -27,22 +27,34 @@ const btnShowAnswer = document.getElementById('btn_show_answer')
 const inpAnswer = document.getElementById('answer')
 const divQuestion = document.getElementById('question')
 
-const arrQstions = ['Цифра 1', 'Цифра 2','Цифра 3']
-const arrAnswers = [1, 2, 3]
+const arrQstions = ['Собака говорит', 'Кошка говорит','Корова говорит']
+const arrAnswers = ["гав", 'мяу', 'му']
 
 function getRandomInRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
 const fnGame = (qs,an) =>{
-    const indexArr = getRandomInRange(0, 3)
-    divQuestion.innerHTML = arrQstions[indexArr]   
-    console.log(indexArr)
-   
+    const indexArr = getRandomInRange(0, 2)
+    
+    divQuestion.innerHTML = arrQstions[indexArr]
+
+    btnCheckAnswer.onclick = ()=>{
+        if (inpAnswer.value == ''|| +inpAnswer.value){
+            alert("ОШИБОЧКА! Пустая строка или число")
+        }else console.log('всё норм')
+
+        const lowerCase = inpAnswer.value.toLowerCase()
+        if (arrAnswers[indexArr] === lowerCase){
+            divQuestion.innerHTML = 'ВСЁ ВЕРНО!'
+        } else  divQuestion.innerHTML = `${'ОШИБОЧКА! Вопрос был...'}<p>${arrQstions[indexArr]}</p> `
+    }
+    btnShowAnswer.onclick = ()=>{
+        divQuestion.innerHTML = `${'Эх ты... Всё было очень просто'}<p>${arrAnswers[indexArr]}</p> `
+    }
 }
 
 btnStartGame.onclick = () =>{
     fnGame()
 }
-
 
