@@ -30,17 +30,19 @@ const divQuestion = document.getElementById('question')
 const arrQstions = ['Цифра 1', 'Цифра 2','Цифра 3']
 const arrAnswers = [1, 2, 3]
 
+function getRandomInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 const fnGame = (qs,an) =>{
-
-    divQuestion.innerHTML = arrQstions[0]
-
-    if (arrQstions[0] === arrAnswers[0]){
-        alert('good')
-    } else alert ('no')
-
+    const indexArr = getRandomInRange(0, 3)
+    divQuestion.innerHTML = arrQstions[indexArr]   
+    console.log(indexArr)
+   
 }
 
 btnStartGame.onclick = () =>{
     fnGame()
 }
+
 
