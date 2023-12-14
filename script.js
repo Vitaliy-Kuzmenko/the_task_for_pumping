@@ -55,8 +55,6 @@ const fnGame = (qs,an) =>{
             divQuestion.innerHTML = 'ВСЁ ВЕРНО!'
             currentAn.splice(indexArr, 1) //удаление ответа если он был правильный
             currentQs.splice(indexArr,1) // удаление вопроса если ответ правильный
-            console.log(currentQs)
-            console.log(currentAn)
         } else  divQuestion.innerHTML = `${'ОШИБОЧКА! Вопрос был...'}<p>${currentQs[indexArr]}</p> `
     }
     //показ правильного ответа
@@ -72,5 +70,20 @@ const fnGame = (qs,an) =>{
 
 btnStartGame.onclick = () =>{
     fnGame(arrQstions, arrAnswers)
+}
+
+const inpName_user = document.getElementById('name_user')
+const inpSurname_user = document.getElementById('surname_user')
+const inpAge_user = document.getElementById('age_user')
+const printResults2 = document.getElementById('results2')
+const btnDownload2 = document.getElementById('download2')
+
+const fnPrintRes2 =(name,surname,age)=>{
+    printResults2.innerHTML = `Привет ${name.value} ${surname.value} с возрастом  ${age.value} лет`
+}
+
+btnDownload2.onclick = ()=>{
+    fnPrintRes2(inpName_user,inpSurname_user,inpAge_user)
+    console.log(inpName_user,inpSurname_user,inpAge_user)
 }
 
