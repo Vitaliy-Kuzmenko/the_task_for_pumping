@@ -72,21 +72,21 @@ btnStartGame.onclick = () =>{
     fnGame(arrQstions, arrAnswers)
 }
 
-const inpName_user = document.getElementById('name_user')
+const inpNameUser = document.getElementById('name_user')
 const inpSurname_user = document.getElementById('surname_user')
-const inpAge_user = document.getElementById('age_user')
-const inpSex_user = document.getElementById('sex_user')
+const inpAgeUser = document.getElementById('age_user')
+const inpSexUser = document.getElementById('sex_user')
 const printResults2 = document.getElementById('results2')
 const btnDownload2 = document.getElementById('download2')
 
 const fnPrintRes2 =(name,surname,age,sex)=>{
-    printResults2.innerHTML = `Привет ${name.value} ${surname.value} с возрастом  ${age.value} лет, ваш пол ${inpSex_user.value}`
+    printResults2.innerHTML = `Привет ${name.value} ${surname.value} с возрастом  ${age.value} лет, ваш пол ${inpSexUser.value}`
 
 
 }
 
 btnDownload2.onclick = ()=>{
-    fnPrintRes2(inpName_user,inpSurname_user,inpAge_user,inpSex_user)
-    console.log(inpName_user,inpSurname_user,inpAge_user)
+    fnPrintRes2(inpNameUser,inpSurname_user,inpAgeUser,inpSexUser)
+    console.log(inpNameUser,inpSurname_user,inpAgeUser)
 }
 
